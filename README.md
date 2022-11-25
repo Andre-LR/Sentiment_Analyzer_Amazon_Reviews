@@ -27,8 +27,35 @@ The project was developed in 5 stages:
 
 
 # Step 1. Dataset reading and analysis
+First, was checked the score given by the customers to amazon's products. Notice that most of the reviewed, looking to their score, were positive.
+| Score | Count |
+|-------|-------|
+| 1     | 467   |
+| 2     | 289   |
+| 3     | 395   |
+| 4     | 711   |
+| 5     | 3131  |
+
+Due to this, the text labeling step was given according to the "Score" of the review.
+
+        Score > 3: Positive
+
+        Score < 3: Negative
+
+        Score = 3: Neutral
+
 
 # Step 2. Pre-processing with data cleaning
+The objective of this step was to remove everything that possible may cause problems to our classification models.
+
+Due to it, we did the following steps:
+  - Remove null values
+  - Remove duplicate reviews
+  - Remove HTML tags 
+  - Remove special characters 
+  - Put the text reviews to lowercase 
+  - Remove stopwords 
+  - Data normalization with 'stemming' technique
 
 # Step 3. Creating training, validation and testing datasets
 
